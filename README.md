@@ -1,7 +1,7 @@
 # 🧵 SewMe — Platform Marketplace Layanan Jahit
 
 <p align="center">
-  <img src="assets/logo-dengan-motto.png" alt="Logo SewMe" width="220">
+  <img src="assets/Logo SewMe.png" alt="Logo SewMe" width="220">
 </p>
 
 <p align="center">

@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('pesanan', function (Blueprint $table) {
+            $table->dropColumn('tanggal');
+            $table->string('jenis')->after('pemesan');
+            $table->integer('pembayaran')->change();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('pesanan', function (Blueprint $table) {
+            $table->date('tanggal')->after('pembayaran'); // Assuming 'tanggal' is of type 'date'
+            $table->dropColumn('jenis');
+            $table->string('pembayaran')->change(); // Assuming 'pembayaran' was originally a string
+        });
+    }
+};
